@@ -1,0 +1,21 @@
+@import '../../sass/variables.scss';
+
+.nav-link {
+    color: $white-color !important;
+}
+.support {
+    @media (min-width:992px) {
+        margin-left:1.5rem !important;
+        padding-left:1.5rem !important;
+        border-left:1px solid rgba(179, 179, 179, 0.5) !important;
+    }
+}
+
+.navbar-toggler {
+    outline: none;
+    border: none !important;
+}
+.navbar-toggler:focus {
+
+    box-shadow: none !important;
+}

@@ -1,0 +1,35 @@
+
+.subscribe {
+    background: #F0F0F0;
+    padding: 100px 0 calc(100px + (50px - 8px)) 0;
+    h2 {
+        font-size: calc(.6rem + 2vw);
+    }
+    form {
+        width: calc(8rem + 50vw);
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        input {
+            border: 1px solid #AAAAAA;
+            border-radius: 10px;
+            outline: none;
+            width: calc(calc(8rem + 50vw) - calc(4rem + 8vw));
+            background: none;
+            height: 50px;
+            padding: 0 10px;
+            position: absolute;
+            top: 0;
+            left: 10px;
+        }
+        button {
+            width: calc(4rem + 8vw);
+            height: 50px;
+            background: #000;
+            color: #fff;
+            border-radius: 15px;
+            position: absolute;
+            right: 10px;
+        }
+    }
+}
