@@ -26,55 +26,55 @@ const Products = () => {
                 <Container>
                     <h2 className='text-center my-5'>Explore Products</h2>
                     <div className='swiper-fixed-height'>
-                    <Swiper
-                        grid={{
-                            rows:2
-                        }}
-                        modules={[Grid, Navigation, Pagination, Scrollbar, A11y]}
-                        spaceBetween={0}
-                        slidesPerView={4}
-                        navigation={{
-                            nextEl: ".swiper-button-next",
-                            prevEl: ".swiper-button-prev",
-                            disabledClass: "swiper-button-disabled"
-                        }}
-                        pagination={{
-                            el: '.my-custom-pagination-div',
-                            clickable: true,
-                            renderBullet: (index, className) => {
-                            return '<span class="' + className + '">' + '' + "</span>";
-                            },
-                        }}
-                        breakpoints={{
-                            300: {
-                              slidesPerView: 2,
-                              grid:{rows:2}
-                            },
-                            767: {
-                              slidesPerView: 3,
-                              grid:{rows:1}
-                            },
-                            992: {
-                                slidesPerView: 4,
+                        <Swiper
+                            grid={{
+                                rows:2
+                            }}
+                            modules={[Grid, Navigation, Pagination, Scrollbar, A11y]}
+                            spaceBetween={0}
+                            slidesPerView={4}
+                            navigation={{
+                                nextEl: ".swiper-button-next",
+                                prevEl: ".swiper-button-prev",
+                                disabledClass: "swiper-button-disabled"
+                            }}
+                            pagination={{
+                                el: '.my-custom-pagination-div',
+                                clickable: true,
+                                renderBullet: (index, className) => {
+                                return '<span class="' + className + '">' + '' + "</span>";
+                                },
+                            }}
+                            breakpoints={{
+                                300: {
+                                slidesPerView: 2,
+                                grid:{rows:2}
+                                },
+                                767: {
+                                slidesPerView: 3,
                                 grid:{rows:1}
-                            }
-                        }}
-                    >
-                    {products.map(item => <SwiperSlide key={item.id}>
-                        <div className='p-3 border'>
-                            <Link to={`/item/${item.id}`}><img src={item.img[2]} className='w-100'/></Link>
-                            <h5>{item.name}</h5>
-                            <div className='d-flex justify-content-between'>
-                                <p style={item.price === item.priceAfterdiscount ? {color : '#000'} : {color : 'red'}}>{item.priceAfterdiscount}</p>
-                                <p className='price'>{item.price === item.priceAfterdiscount ? '' :item.price}</p>
+                                },
+                                992: {
+                                    slidesPerView: 4,
+                                    grid:{rows:1}
+                                }
+                            }}
+                        >
+                        {products.map(item => <SwiperSlide key={item.id}>
+                            <div className='p-3 border'>
+                                <Link to={`/item/${item.id}`}><img src={item.img[2]} className='w-100'/></Link>
+                                <h5>{item.name}</h5>
+                                <div className='d-flex justify-content-between'>
+                                    <p style={item.price === item.priceAfterdiscount ? {color : '#000'} : {color : 'red'}}>{item.priceAfterdiscount}</p>
+                                    <p className='price'>{item.price === item.priceAfterdiscount ? '' :item.price}</p>
+                                </div>
+                                <p className='text-start' style={item.inStock > 0 ? {color : 'green'} : {color:'red'}}>
+                                    {item.inStock > 0 ? 'In stock' : 'Out of stock'}
+                                </p>
                             </div>
-                            <p className='text-start' style={item.inStock > 0 ? {color : 'green'} : {color:'red'}}>
-                                {item.inStock > 0 ? 'In stock' : 'Out of stock'}
-                            </p>
-                        </div>
-                    </SwiperSlide>)}
-                    
-                    </Swiper>
+                        </SwiperSlide>)}
+                        
+                        </Swiper>
                     </div>
                     <div className='arrows d-none d-md-flex'>
                         <button className='swiper-button-prev'>

@@ -7,32 +7,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faHeart} from '@fortawesome/free-regular-svg-icons';
 import {faTruck} from '@fortawesome/free-solid-svg-icons';
 import TextComponent from '../textComponent/TextComponent';
+import Spiner from '../spiner/Spiner';
 
 
 const ItemData = () => {
 
     const params = useParams ();
     
-    const {products} = useContext(ProductContext);
-
-    const [data, setData] = useState(null);
+    const {getData, data, setDatax} = useContext(ProductContext);
 
     
-    const filterData = () => {
-        let x = params.itmId;
-        let item = products.filter(itm => itm.id === x);
-        setData(...item);
-        item.length > 0 && localStorage.setItem('itm', JSON.stringify(item));
-    }
-
     useEffect(() => {
-
-        filterData()
-        let z =  JSON.parse(   localStorage.getItem('itm')    );
-        setData({...z[0]})
-        console.log (data)
-        console.log (data)
-
+        let x = params.itmId;
+        getData(`products/${x}`,setDatax, "obj");
     },[params])
     
     return (
@@ -129,7 +116,7 @@ const ItemData = () => {
                 </section>
             ): (
                 <>
-                 loading ...
+                 <Spiner />
                 </>
             )}
         </>

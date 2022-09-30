@@ -1,7 +1,7 @@
 
 .subscribe {
     background: #F0F0F0;
-    padding: 100px 0 calc(100px + (50px - 8px)) 0;
+    padding: 100px 0 150px;
     h2 {
         font-size: calc(.6rem + 2vw);
     }
@@ -13,8 +13,8 @@
         input {
             border: 1px solid #AAAAAA;
             border-radius: 10px;
-            outline: none;
-            width: calc(calc(8rem + 50vw) - calc(4rem + 8vw));
+            outline: none;//kan mmkan nst5dam variable hnaa afdaal lt5zean 
+            width: calc(calc(8rem + 50vw) - calc(4rem + 8vw));//calc hykwan more declared
             background: none;
             height: 50px;
             padding: 0 10px;
